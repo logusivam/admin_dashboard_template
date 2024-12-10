@@ -82,6 +82,7 @@ fetchMetrics();
         if (!searchValue) {
             homepageContent.style.display = 'block';
             customerDataSection.style.display = 'none';
+            document.getElementById('customerDetails').innerHTML = '';
             document.getElementById('noDataMessage').style.display = 'block';
             document.getElementById('noDataMessage').textContent = 'Enter a character to search.';
             hideCharts();
