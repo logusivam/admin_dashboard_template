@@ -129,21 +129,21 @@ fetchMetrics();
             });
 
             // If input has value, clear the no data message
-    document.getElementById('noDataMessage').style.display = 'none';
-    homepageContent.style.display = 'none'; // Hide homepage content when searching
-    customerDataSection.style.display = 'block';
-    
-    // Place your search logic here to show results
-    searchAndDisplayResults(searchValue);
-}
+            document.getElementById('noDataMessage').style.display = 'none';
+            homepageContent.style.display = 'none'; // Hide homepage content when searching
+            customerDataSection.style.display = 'block';
+            
+            // Place your search logic here to show results
+            searchAndDisplayResults(searchValue);
+        }
 
-function searchAndDisplayResults(searchValue) {
-    const customerDetails = document.getElementById('customerDetails');
+        function searchAndDisplayResults(searchValue) {
+            const customerDetails = document.getElementById('customerDetails');
 
-    // Mock example: Add your data-fetching logic here
-    customerDetails.innerHTML = `
-        <p class="no_match">No matching data found for "<strong>${searchValue}</strong>".</p>
-    `;
+            // Mock example: Add your data-fetching logic here
+            customerDetails.innerHTML = `
+                <p class="no_match">No matching data found for "<strong>${searchValue}</strong>".</p>
+            `;
 
     }
     
