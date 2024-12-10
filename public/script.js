@@ -87,9 +87,9 @@ fetchMetrics();
 
             // Show no data message
             const noDataMessage = document.getElementById('noDataMessage');console.log("noDataMessage element: ", noDataMessage);
-            noDataMessage.style.display = 'block';
             noDataMessage.style.cssText = 'display: block !important; color: red;';
 
+            
             noDataMessage.textContent = 'Enter a character to search.';
             return;
         }
