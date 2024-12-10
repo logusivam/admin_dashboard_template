@@ -39,7 +39,7 @@ const sleepScoreChart = new Chart(document.getElementById('sleepScoreChart1'), {
 
 async function fetchMetrics() {
     try {
-        const response = await fetch('https://admin-dashboard-template.onrender.com//metrics'); // Adjust port if necessary
+        const response = await fetch('https://admin-dashboard-template.onrender.com/metrics'); // Adjust port if necessary
         const data = await response.json();
 
         // Update DOM elements with real-time data
