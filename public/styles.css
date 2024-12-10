@@ -351,10 +351,4 @@ body.light-mode .card-container {
     color: #f8f9fa; /* Lighter icon on hover */
     border-color: #f8f9fa; /* Lighter border on hover */
 }
-
-.no-data {
-    text-align: center;
-    color: red;
-    font-weight: bold;
-    margin: 20px 0;
-}
+ 
