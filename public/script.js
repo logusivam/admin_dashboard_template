@@ -96,7 +96,7 @@ fetchMetrics();
         fetch(`http://localhost:5000/search?query=${searchValue}`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('No matching data found');
                 }
                 return response.json();
             })
@@ -135,18 +135,7 @@ fetchMetrics();
             
             // Place your search logic here to show results
             searchAndDisplayResults(searchValue);
-        }
-
-        function searchAndDisplayResults(searchValue) {
-            const customerDetails = document.getElementById('customerDetails');
-
-            // Mock example: Add your data-fetching logic here
-            customerDetails.innerHTML = `
-                <p class="no_match">No matching data found for "<strong>${searchValue}</strong>".</p>
-            `;
-
     }
-    
     function displayCustomerData(customer) {
        /*  console.log("Displaying customer data:", customer); */ // Log customer data
     
