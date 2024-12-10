@@ -260,14 +260,7 @@ body.light-mode .card-container {
     color: red;
     font-weight: bold;
     margin: 20px 0;
-}
-.no_match {
-    text-align: center;
-    color: red;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
+} 
 /* Navbar Responsiveness */
 @media (max-width: 768px) {
     .navbar-nav {
