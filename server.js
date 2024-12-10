@@ -1,12 +1,15 @@
 require('dotenv').config(); // Load environment variables from .env
 const express = require('express');
 const { MongoClient } = require('mongodb');
-
+const path = require('path');
 const app = express();
 //const port = 5000;
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors()); 
+
+// Serve static files (e.g., index.html, CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Use the connection string and port from environment variables
