@@ -80,7 +80,7 @@ fetchMetrics();
     
         // If no search value, display a message and return
         if (!searchValue) {
-            homepageContent.style.display = 'block';
+            homepageContent.style.display = 'none';
             customerDataSection.style.display = 'none';
             document.getElementById('customerDetails').innerHTML = '';
             document.getElementById('noDataMessage').style.display = 'block';
