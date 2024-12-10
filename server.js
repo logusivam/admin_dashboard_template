@@ -10,10 +10,6 @@ app.use(cors());
 
 // Serve static files (e.g., index.html, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
-// Catch-all route to serve frontend (e.g., index.html)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 
 // Use the connection string and port from environment variables
@@ -96,6 +92,12 @@ app.get('/search', async (req, res) => {
         console.error("Error:", err);
         res.status(500).json({ error: "Internal server error" });
     }
+});
+
+// Catch-all route to serve the frontend (index.html)
+// This should be after all API routes to prevent it from handling API requests
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 connectToDatabase().then(() => {
