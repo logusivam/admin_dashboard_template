@@ -80,14 +80,17 @@ fetchMetrics();
     
         // If no search value, display a message and return
         if (!searchValue) {
-            homepageContent.style.display = 'none';
-            customerDataSection.style.display = 'none';
-            document.getElementById('customerDetails').innerHTML = '';
-            document.getElementById('noDataMessage').style.display = 'block';
-            document.getElementById('noDataMessage').textContent = 'Enter a character to search.';
-            hideCharts();
+            homepageContent.style.display = 'none'; // Hide homepage content
+            customerDataSection.style.display = 'none'; // Hide customer data section
+            document.getElementById('customerDetails').innerHTML = ''; // Clear customer details
+    
+            // Show no data message
+            const noDataMessage = document.getElementById('noDataMessage');
+            noDataMessage.style.display = 'block';
+            noDataMessage.textContent = 'Enter a character to search.';
             return;
         }
+    
     
         // Fetch customer data from MongoDB
         fetch(`http://localhost:5000/search?query=${searchValue}`)
