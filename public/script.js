@@ -83,10 +83,10 @@ fetchMetrics();
             homepageContent.style.display = 'none'; // Hide homepage content
             customerDataSection.style.display = 'none'; // Hide customer data section
             document.getElementById('customerDetails').innerHTML = ''; // Clear customer details
-            console.log("noDataMessage element: ", noDataMessage);
+            
 
             // Show no data message
-            const noDataMessage = document.getElementById('noDataMessage');
+            const noDataMessage = document.getElementById('noDataMessage');console.log("noDataMessage element: ", noDataMessage);
             noDataMessage.style.display = 'block';
             noDataMessage.textContent = 'Enter a character to search.';
             return;
