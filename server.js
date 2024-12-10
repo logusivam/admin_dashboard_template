@@ -6,7 +6,11 @@ const app = express();
 //const port = 5000;
 
 const cors = require('cors');
-app.use(cors()); 
+app.use(cors({
+    origin: '*', // Allow all origins (for development only)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Serve static files (e.g., index.html, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
