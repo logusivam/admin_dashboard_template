@@ -8,12 +8,12 @@ const app = express();
 const cors = require('cors');
 app.use(cors()); 
 
-/* // Serve static files (e.g., index.html, CSS, JS)
+// Serve static files (e.g., index.html, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
 // Catch-all route to serve frontend (e.g., index.html)
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-}); */
+});
 
 
 // Use the connection string and port from environment variables
