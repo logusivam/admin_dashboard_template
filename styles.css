@@ -1,0 +1,354 @@
+body {
+    font-family: Arial, sans-serif; 
+}        
+body.dark-mode {
+    background-color: #1d1d1d;
+    color: #ffffff;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+/* frontend card */
+.card-body{
+    background: #e1e1e1; /* Light grey background */   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    flex-grow: 1; /* Make the card body take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.card {
+    height: 100%; /* Make the card take full height of the column */
+    display: flex;
+    flex-direction: column;
+}
+/* frontend card */
+ /* Icon Styling default home screen*/
+ .icon {
+    font-size: 2rem;
+    color: #212529;
+    animation: moveIcon 1.5s infinite alternate;
+}
+
+/* Animation for Icons default home screen */
+@keyframes moveIcon {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .card-body{
+    background-color: #212529; 
+    color: #ffffff; 
+}
+body.dark-mode .card-body i{
+    background-color: #212529; 
+    color: #ffffff; 
+}
+
+/* Sidebar with Background Image */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.9), rgba(52, 58, 64, 0.9)); /* Gradient with transparency */
+    background-image: url('https://img.freepik.com/premium-photo/positive-female-doctor-with-long-dark-hair-holding-stethoscope-heart-shape-white-studio_7502-7922.jpg?w=360'); /* Health-related placeholder image */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay; /* Blend image with gradient */
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px 0; /* Add some padding */
+}
+
+.sidebar.show {
+    left: 0; /* Show sidebar */
+}
+
+/* Sidebar Header (Admin Panel Title) */
+.sidebar-header {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffc107; /* Highlighted title color */
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25px;
+}
+
+.sidebar-header i {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #ffc107; /* Icon color */
+}
+
+/* Sidebar Navigation Items */
+.sidebar .nav {
+    width: 100%; /* Ensure the nav takes full width */
+    list-style: none;
+    padding: 0;
+    margin-left: 25px;
+    position: absolute;
+    top: 40px;
+}
+
+.sidebar .nav-item {
+    margin: 15px 0; /* Add spacing between items */
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align text and icon */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners */
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.sidebar .nav-link i {
+    margin-right: 15px; /* Add spacing between icon and text */
+    font-size: 20px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover background effect */
+    color: #ffc107; /* Change text color on hover */
+    transform: translateX(-12px); /* Subtle movement */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.main-content {
+    margin-left: 0;
+    transition: all 0.3s ease; /* Smooth transition for content */
+    padding: 20px;
+}
+
+ 
+.main-content.shift {
+    margin-left: 250px; /* Shifts when sidebar is visible */
+}
+
+/* Navbar */
+.navbar {
+    z-index: 1001;
+}
+
+/* Search Bar */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #7a7676;
+    border-radius: 20px;
+}
+
+.search-bar i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    color: #000000;
+}
+
+/* Mobile-friendly Search Icon */
+.search-icon-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        display: none;
+    }
+
+    .search-icon-mobile {
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
+/* Responsive Sidebar and Content */
+@media (min-width: 992px) {
+    .sidebar {
+        left: 0; /* Sidebar always visible on large screens */
+    }
+    .main-content {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 991px) {
+    .sidebar.show {
+        left: 0; /* Sidebar visible on mobile toggle */
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Card Styling */
+.card {
+    border: none;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+body.dark-mode .card-container {
+color: #000000; /* White text for dark mode */
+}
+
+body.light-mode .card-container {
+    color: #000000; /* Black text for light mode */
+}
+
+/* Data Card Styling */
+.data-card {
+    background: #f8f9fa; /* Light grey background */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between icon and text */
+}
+
+.no-data {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav img {
+        width: 35px;
+        height: 35px;
+    }
+}
+/* Icon Styles */
+.animated-icon {
+    font-size: 24px;
+    color: #2e2e2e; /* Blue color for icons */
+    animation: moveIcon 1.5s infinite ease-in-out alternate;
+}
+
+/* Moving Animation */
+@keyframes moveIcon {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px); /* Move icon up */
+    }
+}
+
+/* Profile Button: Transparent with Down Arrow */
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between profile icon and down arrow */
+    border: none;
+    background: transparent; /* No background */
+    color: white; /* Arrow color */
+}
+
+.profile-btn:hover {
+    color: #d3d3d3; /* Light gray hover effect */
+}
+
+/* Dropdown Menu: Dark Mode */
+.dropdown-menu {
+    background-color: #343a40; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 12px 20px; /* Increase padding for larger size */
+    border-radius: 10px; /* Add curved corners to the dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect for better visibility */
+    width: 250px; /* Set a fixed width */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+
+.dropdown-menu .dropdown-item {
+    color: #ffffff; /* White text */
+}
+
+/* Hover Effect for Dropdown Options */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #495057; /* Slightly lighter dark hover */
+}
+
+/* Dark Mode Toggle Button Styling */
+.dark-toggle {
+    background-color: #212529; /* Dark black background */
+    border: 2px solid white; /* White circle border */
+    border-radius: 50%; /* Makes it a circle */
+    width: 30px; /* Circle size */
+    height: 30px; /* Circle size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Icon color */  
+    margin-left: 2px;   
+}
+
+/* Hover Effect */
+.dark-toggle:hover {
+    background-color: #343a40; /* Slightly lighter black on hover */
+    color: #f8f9fa; /* Lighter icon on hover */
+    border-color: #f8f9fa; /* Lighter border on hover */
+}
+
