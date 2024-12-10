@@ -83,7 +83,8 @@ fetchMetrics();
             homepageContent.style.display = 'none'; // Hide homepage content
             customerDataSection.style.display = 'none'; // Hide customer data section
             document.getElementById('customerDetails').innerHTML = ''; // Clear customer details
-    
+            console.log("noDataMessage element: ", noDataMessage);
+
             // Show no data message
             const noDataMessage = document.getElementById('noDataMessage');
             noDataMessage.style.display = 'block';
