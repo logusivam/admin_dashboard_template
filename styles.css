@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif; 
+}        
+body.dark-mode {
+background-color: #1d1d1d;
+color: #ffffff;
+}
+
+body.light-mode {
+background-color: #ffffff;
+color: #000000;
+}
+
+/* Sidebar */
+.sidebar {
+width: 250px;
+background-color: #343a40;
+color: white;
+height: 100vh;
+position: fixed;
+top: 0;
+left: 0;
+padding-top: 56px; /* Below navbar */
+display: none; /* Hidden by default */
+z-index: 1000;
+}
+
+.sidebar.show {
+display: block; /* Show sidebar on mobile when toggled */
+}
+
+
+.main-content {
+margin-left: 200px;padding: 20px;
+}
+
+.card {
+border: none;
+}
+
+.main-content {
+margin-left: 250px;
+}
+/* Desktop Sidebar */
+@media (min-width: 992px) {
+.sidebar {
+display: block;
+}
+
+.main-content {
+margin-left: 250px;
+}
+}
+#darkModeToggle .fa-sun, #darkModeToggle .fa-moon {
+font-size: 20px;
+} 
+
+/* Navbar */
+.navbar {
+z-index: 1001;
+}
+
+/* Search Bar */
+.search-bar {
+position: relative;
+display: flex;
+align-items: center;
+}
+
+.search-bar input {
+width: 100%;
+padding: 10px 40px 10px 15px;
+border: 1px solid #7a7676;
+border-radius: 20px;
+}
+
+.search-bar i {
+position: absolute;
+right: 15px;
+top: 15px;
+cursor: pointer;
+}
+
+/* Mobile-friendly Search Icon */
+.search-icon-mobile {
+display: none;
+}
+
+@media (max-width: 768px) {
+.search-bar {
+display: none;
+}
+
+.search-icon-mobile {
+display: inline-block;
+cursor: pointer;
+}
+}
+
+/* Card Container */
+.card-container {
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+margin-bottom: 2rem;
+}
+
+body.dark-mode .card-container {
+color: #000000; /* White text for dark mode */
+}
+
+body.light-mode .card-container {
+color: #000000; /* Black text for light mode */
+}
+
+.data-card {
+flex: 1;
+min-width: 250px;
+padding: 20px;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-data {
+text-align: center;
+color: red;
+font-weight: bold;
+margin: 20px 0;
+}
+
+/* Ensure navbar items are spaced out and aligned */
+.navbar-nav {
+display: flex;
+align-items: center;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+/* Make the navbar items stack vertically on small screens */
+.navbar-nav {
+flex-direction: column;
+align-items: flex-start;
+}
+
+/* Adjust margin for profile image and theme button */
+.navbar-nav .nav-item {
+margin-bottom: 0.5rem; /* Space between items */
+}
+}
+
+@media (max-width: 576px) {
+/* Adjust profile image size on very small screens */
+.navbar-nav img {
+width: 35px; /* Make the image a little smaller */
+height: 35px;
+}
+}   
+
