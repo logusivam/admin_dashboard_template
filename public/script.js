@@ -39,7 +39,7 @@ const sleepScoreChart = new Chart(document.getElementById('sleepScoreChart1'), {
 
 async function fetchMetrics() {
     try {
-        const response = await fetch('http://localhost:5000/metrics'); // Adjust port if necessary
+        const response = await fetch('http://localhost:3000/metrics'); // Adjust port if necessary
         const data = await response.json();
 
         // Update DOM elements with real-time data
@@ -96,7 +96,7 @@ fetchMetrics();
     
     
         // Fetch customer data from MongoDB
-        fetch(`http://localhost:5000/search?query=${searchValue}`)
+        fetch(`http://localhost:3000/search?query=${searchValue}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No matching data found');
