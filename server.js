@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Use the connection string and port from environment variables
 const uri = process.env.MONGO_URI; // Connection string from .env
-const port = process.env.PORT || 3000; // Default to 5000 if PORT is not set
+const port = process.env.PORT || 3000; // Default to 3000 if PORT is not set
 
 // Database and collection
 const dbName = "healthDataDB";
